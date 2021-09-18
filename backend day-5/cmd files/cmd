@@ -1,0 +1,11 @@
+var fs = require("fs");
+fs.mkdirSync('day_1);
+var fs = require("fs);
+fs.writeFileSync("day_1/hello.txt", "how are you", (err)=>{
+    if(err){
+        console.log(err);
+    }
+});
+fs.readFileSync("day_1/hello.txt");
+fs.readFileSync("day_1/hello.txt","utf-8");
+fs.renameSync("day_1/hello.txt", "day_1/helllooo.txt");

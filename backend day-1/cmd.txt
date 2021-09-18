@@ -1,0 +1,48 @@
+redis-cli
+
+SET name Anu
+GET name
+SET age 28
+GET age
+DEL age
+EXISTS name
+EXISTS age
+KEY*
+FLUSHALL
+KEY*
+clear
+ttl name
+expire name 10
+setex name 10 Anushka
+
+ARRAYS
+lpush friends John
+LRANGE friends 0 -1
+rpush friends Romy
+LRANGE friends 0 -1
+KEY*
+lpop friends
+LRANGE 0 -1
+
+
+SETS
+SADD hobbies "weight lifting"
+SADD  hobbies "weigth"
+SADD hobbies "w"
+SADD  hobbies "w"
+SMEMBERS hobbies
+
+OBJECTS
+HSET person name Anushka
+HGET person name
+HGETALL person
+HSET person age 28
+HGETALL person
+HDEL person age
+HGETALL person
+HEXISTS person name
+HEXISTS person age
+
+
+
+
