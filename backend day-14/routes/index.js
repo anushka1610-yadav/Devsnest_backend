@@ -1,15 +1,16 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var registerInitialCheck = require("../middlewares/registerChecks");
-var register = require("../controllers/register");
-
+var registerInitialCheck= require('../middlewares/registerChecks')
+var {register,registerSuperAdmin} = require('../controllers/register')
+var checkAdmin= require("../middlewares/checkSuperAdmin")
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get('/', function(req, res, next) {
   const sess = req.session;
-  sess.username = "ansh";
-  res.render("index", { title: "Express" });
+  sess.username = 'Tyrion';
+  res.render('index', { title: 'Express' });
 });
 
-router.post("/register", registerInitialCheck, register);
-
+router.post('/register', registerInitialCheck,register)
+router.post('/register-super-admin', registerInitialCheck,registerSuperAdmin)
+router.get('/super', checkAdmin)
 module.exports = router;
