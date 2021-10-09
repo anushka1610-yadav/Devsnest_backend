@@ -1,0 +1,1 @@
+# Postgres install kar local pe
